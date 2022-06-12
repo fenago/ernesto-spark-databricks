@@ -1,5 +1,5 @@
 // Databricks notebook source
-val data = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/treasure_island.txt") 
+val data = sc.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/treasure_island.txt") 
 
 
 // COMMAND ----------
@@ -10,7 +10,7 @@ data.count()
 
 // COMMAND ----------
 
-val data2 = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/treasure_island.txt")
+val data2 = sc.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/treasure_island.txt")
 
 
 // COMMAND ----------

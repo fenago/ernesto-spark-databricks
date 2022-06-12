@@ -71,17 +71,17 @@ This will create and RDD[(String, Int)] as shown below.
 
 **Step 2:** Let is now write the RDD to Sequence file format using the saveAsSequenceFile method as shown below.
 
-`seqRDD.saveAsSequenceFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/seqOut")`
+`seqRDD.saveAsSequenceFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/seqOut")`
 
 You may run a cat command from another terminal to check if the save was successful, but the file will not be human readable.
 
 
-`ls ~/work/dbfs:/FileStore/shared_uploads/ather@ernesto.net/seqOut`
+`ls ~/work/dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/seqOut`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
 
-`cat ~/dbfs:/FileStore/shared_uploads/ather@ernesto.net/part*`
+`cat ~/dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part*`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
@@ -93,7 +93,7 @@ We know that the save was successful by looking at SEQ at the beginning of the f
 Execute the following code in the notebook.
 
 ```
-val  seqData = sc.sequenceFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/part-00001"
+val  seqData = sc.sequenceFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part-00001"
 ,classOf[org.apache.hadoop.io.Text]
 ,classOf[org.apache.hadoop.io.IntWritable])
 ```
@@ -172,7 +172,7 @@ import org.apache.hadoop.mapred.KeyValueTextInputFormat
  
 **Step 3:** Let us now read the file using the hadoopFile API as shown below. This is the old Hadoop API.
 
-`val hadoopData = sc.hadoopFile[Text, Text, KeyValueTextInputFormat]("dbfs:/FileStore/shared_uploads/ather@ernesto.net/part-r-00000")` 
+`val hadoopData = sc.hadoopFile[Text, Text, KeyValueTextInputFormat]("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part-r-00000")` 
 
 ![](./Screenshots/Chapter_10/Selection_025.png)
 

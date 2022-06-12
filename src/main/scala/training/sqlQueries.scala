@@ -15,7 +15,7 @@ object sqlQueries {
     val users = spark.read
       .format("csv")
       .options(Map("inferSchema" -> "true", "header" -> "true"))
-      .load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/us-500.csv")
+      .load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/us-500.csv")
 
     users.createOrReplaceTempView("users")
 
@@ -34,7 +34,7 @@ object sqlQueries {
 
     /*userCountByState.write
       .format("csv")
-      .save("dbfs:/FileStore/shared_uploads/ather@ernesto.net/
+      .save("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/
 	  
 	spark.stop()
 

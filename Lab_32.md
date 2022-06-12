@@ -73,7 +73,7 @@ Execute the following code in the notebook.
  ```
 val  parquetData = spark
 .read
-.load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/userdata1.parquet")
+.load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/userdata1.parquet")
 ```
 
 Please see that we need not mention the format here as Parquet is default file format in Spark. However, you may explicitly mention the format as we did in the previous tasks if you desire so.
@@ -87,20 +87,20 @@ You should see the following output when you call the show method on the datafra
 
 **Step 3:** Let us write this back to the filesystem in Parquet format.
 
-`parquetData.write.save("dbfs:/FileStore/shared_uploads/ather@ernesto.net/output4")`
+`parquetData.write.save("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/output4")`
  
 #### Output
 We can check if the save was successful by simply running the cat command from a new terminal as shown below. However, you will not be able to read the file correctly as it is not human readable.
 
 
-`cat dbfs:/FileStore/shared_uploads/ather@ernesto.net/part*`
+`cat dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part*`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
 
 **Step 4:** We can also save a parquet file using compression as shown below.
 
-`parquetData.write.option("codec", "gzip").save("dbfs:/FileStore/shared_uploads/ather@ernesto.net/output5")`
+`parquetData.write.option("codec", "gzip").save("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/output5")`
 
 Task is complete!
 
@@ -132,7 +132,7 @@ Execute the following code in the notebook.
 val orcData = spark
 .read
 .format("orc")
-.load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/userdata1_orc")
+.load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/userdata1_orc")
 ```
 
 
@@ -146,13 +146,13 @@ You should see the following output when you call the show method on the datafra
 
 **Step 3:** We can now simply write to an ORC format similar to what we have been doing with other file formats so far.
 
-`orcData.write.format("orc").save("dbfs:/FileStore/shared_uploads/ather@ernesto.net/output6")`
+`orcData.write.format("orc").save("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/output6")`
 
 
 #### Output
 Similar to Parquet, ORC is also not human readable and you will only see gibberish data when used the cat command as shown below.
 
-`cat dbfs:/FileStore/shared_uploads/ather@ernesto.net/part*`
+`cat dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part*`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 

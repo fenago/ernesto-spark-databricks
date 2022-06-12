@@ -64,7 +64,7 @@ val data = spark
 .option("InferSchema", "true")
 .option("header", "false")
 .option("nullValue", "Null")
-.load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")
+.load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings.csv")
 ```
 
 We have used a new option here which is called NullValue. This will replace all the null values with the provided string, which is Null in this case. The default is "". Please check the references section for all the options that can be used while reading or writing CSV files. All the options can be used in this way or inside a map object.
@@ -87,7 +87,7 @@ val  dataNew = spark
 , "header" -> "false"
 , "nullValue" -> "Null"
 , "mode" -> "FAILFAST"))
-.load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")
+.load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings.csv")
 ```
 
 
@@ -100,14 +100,14 @@ val  dataNew = spark
 
 Execute the following code in the notebook.
 
-`dataNew.write.format("csv").option("sep", "|").save("dbfs:/FileStore/shared_uploads/ather@ernesto.net/output2")`
+`dataNew.write.format("csv").option("sep", "|").save("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/output2")`
 
 Here, we have used an option called sep which replaces the delimiter from comma to a pipe.
 
 **Step 5:** Let us check if the save was successful as we desired.
 
 
-`cat dbfs:/FileStore/shared_uploads/ather@ernesto.net/part*`
+`cat dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part*`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
@@ -138,7 +138,7 @@ Execute the following code in the notebook.
 val  jsonData = spark.read
 .format("json")
 .option("multiLine", "false")
-.load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/example_1.json")
+.load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/example_1.json")
 ```
 
 
@@ -164,19 +164,19 @@ Execute the following code in the notebook.
 val  multiJson = spark.read
     .format("json")
     .option("multiLine", "true")
-    .load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/example_2.json")
+    .load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/example_2.json")
 ```
 
 
 **Step 6:** Let us now write this dataframe to the filsesystem.
 
-`multiJson.write.format("json").save("dbfs:/FileStore/shared_uploads/ather@ernesto.net/output3")`
+`multiJson.write.format("json").save("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/output3")`
  
 #### Output
 You can check the output by running the following command from a new terminal.
 
 
-`cat dbfs:/FileStore/shared_uploads/ather@ernesto.net/part*`
+`cat dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part*`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 

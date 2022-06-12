@@ -19,7 +19,7 @@ object tags {
     Logger.getLogger("Org").setLevel(Level.ERROR)
 
     val sc = new SparkContext("local[*]", "Paired RDD Operations")
-    val data = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/tags.csv")
+    val data = sc.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/tags.csv")
     val RDDPair = data.map(parseRecords)
     val grouped = RDDPair.groupByKey()
     grouped.collect.foreach(println)

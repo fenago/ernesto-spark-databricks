@@ -21,7 +21,7 @@ object countByMovieMain {
     val options = Map("header" -> "true", "inferSchema" -> "true")
     val data = sparkSession.read.format("com.databricks.spark.csv")
         .options(options)
-        .load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings_head.csv")
+        .load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings_head.csv")
         .as[Movies]
 
     data.foreach(record => {

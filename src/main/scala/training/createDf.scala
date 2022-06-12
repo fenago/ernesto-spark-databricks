@@ -9,7 +9,7 @@ import org.apache.spark.sql.types.{DoubleType, IntegerType, StringType, StructFi
       .master("local[*]")
       .getOrCreate()
 
-    val input = ss.sparkContext.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/mlb_players.csv")
+    val input = ss.sparkContext.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/mlb_players.csv")
 
     val header = input.first()
     val records = input.filter(x => x != header)

@@ -5,7 +5,7 @@ val friendsRDD = sc.parallelize(friends)
 
 // COMMAND ----------
 
-val ratings = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")
+val ratings = sc.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings.csv")
 
 val count_ratings = ratings.count
 

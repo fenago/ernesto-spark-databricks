@@ -9,7 +9,7 @@ val sparkSession = SparkSession.builder
   .appName("WordCount")
   .getOrCreate()
 val sc = sparkSession.sparkContext
-val data = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/treasure_island.txt")
+val data = sc.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/treasure_island.txt")
 val words = data.flatMap(lines => lines.split(" "))
 val wordskv = words.map(word => (word,1))
 val count = wordskv.reduceByKey((x,y) => x + y)

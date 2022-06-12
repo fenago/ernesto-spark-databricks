@@ -20,7 +20,7 @@ object builtInFunctions {
       .read
       .format("csv")
       .options(Map("header" -> "true", "inferSchema" -> "true"))
-      .load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings-head.csv")
+      .load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings-head.csv")
       .as[Rating]
       .cache()
 

@@ -52,7 +52,7 @@ Ratings.csv - http://bit.ly/2L8IEBS
 
 Each line of this file represents one rating of one movie by one user, and has the following format: userId,movieId,rating,timestamp
 
-`val ratings = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")` 
+`val ratings = sc.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings.csv")` 
 
 **Step 3:** We can now create a new RDD from the existing RDD. For example, let us count the number of ratings in the ratings RDD we created in the previous step.
  

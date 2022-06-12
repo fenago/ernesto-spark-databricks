@@ -167,9 +167,9 @@ Now run the program as you did in the previous task and check the output directo
 
 #### Output Files
 
-`ls ~/work/dbfs:/FileStore/shared_uploads/ather@ernesto.net/output` 
+`ls ~/work/dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/output` 
 
-`cat ~/dbfs:/FileStore/shared_uploads/ather@ernesto.net/part-*` 
+`cat ~/dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part-*` 
 
 Open the `part-00000-<guid>` file and you should see the result.
 

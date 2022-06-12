@@ -58,7 +58,7 @@ ratings-head.csv - http://bit.ly/2FPdhHE
 
 movies-head.csv - http://bit.ly/2RTg72N
 
-**Note:** We already have cloned a github repository which contains a required file. Open `~/work/dbfs:/FileStore/shared_uploads/ather@ernesto.net/` to view file.
+**Note:** We already have cloned a github repository which contains a required file. Open `~/work/dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/` to view file.
 
 We shall join these datasets based on the movieID.
 

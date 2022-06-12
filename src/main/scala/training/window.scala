@@ -22,7 +22,7 @@ object window {
       .read
       .format("csv")
       .options(Map("header" -> "true", "inferSchema" -> "true"))
-      .load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/employee.csv")
+      .load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/employee.csv")
       .as[Employee]
 
     val window = Window.partitionBy($"dept").orderBy($"pay".desc)
