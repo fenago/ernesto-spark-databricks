@@ -8,17 +8,9 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
 
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
 
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab16`
 
 
 **Note:**
@@ -28,27 +20,13 @@ You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab16`
 
 ![](./Screenshots/scala.png)
 
-The aim of the following lab exercises is to start writing Spark SQL code in **vscode** editor to learn about Data Frames.
+The aim of the following lab exercises is to start writing Spark SQL code in editor to learn about Data Frames.
 We will cover following topics in this scenario.
 - Creating Data Frame using DataSource API
 
-## Prerequisites
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- SBT
 
 
-#### JAVA
-Verify the installation with: `java -version` 
 
-You'll see the following output:
-
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
 
 
 #### SBT
@@ -150,7 +128,7 @@ users.select("last_name").show()
 
 ![](./Screenshots/Chapter_7/Selection_008.png)
 
-**Important:** You need to uncomment above line in `users.scala` using **vscode** editor before running program again.
+**Important:** You need to uncomment above line in `users.scala` using editor before running program again.
 
 `rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.users"` 
 
@@ -166,7 +144,7 @@ We can select multiple columns using following code:
 users.select("first_name", "last_name").show()
 ```
 
-**Important:** You need to uncomment above line in `users.scala` using **vscode** editor before running program again.
+**Important:** You need to uncomment above line in `users.scala` using editor before running program again.
 
 We simply call the select method on users dataFrame and pass the required columns as arguments. Then we call the show method as usual.
 

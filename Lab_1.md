@@ -8,105 +8,31 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
+#### Login Darabricks Community Edition
 
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
+Open https://community.cloud.databricks.com/ in Chrome browser and Signup. You will get following welcome screen after login:
 
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
+![](./Screenshots/databricks1.png)
 
-Now, move in the directory which contains the scala source code by running following command in the terminal.
+#### Create Notebook
 
-`cd ~/work/ernesto-spark`
+Click **Create a Notebook** button and enter `lab_1` as notebook name:
 
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab1`
+![](./Screenshots/databricks2.png)
 
+#### Lab Solution
 
-## What is Scala?
+Lab solution is present in `solutions/lab_1.scala` file.
 
-Scala is short for Scalable Language. It is called scalable language because it is scalable as per the user requirement. Scala is a Functional as well as Object Oriented Open Source Programming language which runs on top of a `Java Virtual Machine (JVM)`. Scala is, as said above, the most preferred programming language for Spark, as `Spark` itself is built with Scala. Since Scala runs on top of a JVM, we can access Java libraries within the Scala code and utilize the functionalities of Java without being limited by Scala itself.
-
-The compiler used to compile the Scala code is scalac. The Scala compiler compiles the Scala code to a byte code which is understood by a `JVM` to process the code. This is similar to how Java compiles its Java code using javac compiler to a byte code to process it on a JVM.  
-
-## Introduction
-
-The aim of the following lab exercises is to install Scala, and perform various exercises by writing Scala code so that we can get our hands on Scala.
-We will cover following topics in this scenario.
-
-- Downloading and Installing JDK
-- Downloading and Installing Scala
-- Getting started with Scala basics
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- Scala
-
-## Download and Install JDK
-
-**Note:** Java is already installed. It is not required to run following commands to install.
-
-**Step 1:** From the terminal, run the following commands to install JDK (Java Development Kit).
-
-`sudo apt-get update` 
-
-**Step 2:** Once you run the above command, run the following command to actually download and install JDK.
-
-`sudo apt-get --assume-yes install default-jdk` 
-
-
-Verify the installation with: `java -version` 
-
-You'll see the following output:
-
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
-
-## Download and Install Scala
-
-Now that we have installed Java, we are ready to install Scala and start writing some Scala code!
-
-**Step 1:** Run the following commands from the terminal to install Scala.
-
-`wget www.scala-lang.org/files/archive/scala-2.12.8.deb`
-
-`sudo dpkg -i scala-2.12.8.deb`
-
-
-**Step 2:** Verify your Scala installation version by running the following command.
- 
-`scala -version`
-
-You will get following output.
-
-```
-Scala code runner version 2.12.8 -- Copyright 2002-2018, LAMP/EPFL and Lightbend, Inc.
-```
-
-## REPL
-
-After the installation is completed successfully, type scala in your terminal and you will be prompted with a Scala prompt.
-
-`scala`
-
-The scala prompt is the interactive shell where you can write and run Scala code. This interactive shell is also known as `REPL`.
-
-**Step 4:** You can now start writing Scala code! Let's start by printing the classic "Hello world!" from the shell. To do this simply type the following code and hit enter on your keyboard.
+You can now start writing Scala code! Let's start by printing the classic "Hello world!" from the notebook. To do this simply type the following code and hit enter on your keyboard.
 
 `println("Hello World!")`
-
 
 As you can see from the screenshot, the output is shown below immediately as soon as you hit enter.
 
 ![](./Screenshots/Chapter_2/Selection_014.png)
 
-**Step 5:** To quit the Scala REPL, you use the following command.
-
-`:q`
-
-
-You are now back to the terminal prompt.
+**Note:** It will take few minutes first time to setup Spark cluster.
 
 Task is complete!
 

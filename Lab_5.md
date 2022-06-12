@@ -8,18 +8,9 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
+#### Lab Solution
 
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
-
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
-
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab5`
-
+Lab solution is present in `solutions/lab_5.scala` file.
 
 ## Introduction to RDD
 
@@ -31,31 +22,11 @@ Resilient Distributed Dataset also known as RDD is the basic data structure of S
 
 **Dataset:** The RDDs can be created with any of the datasets such as a text file, JSON, CSV, Database file via JDBC etc.
 
-## Prerequisites
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- pyspark
-
-
-#### JAVA
-Verify the installation with: `java -version` 
-
-You'll see the following output:
-
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
-
 
 
 ## First RDD
 
-**Step 1:** Let us create a RDD using the parallelize keyword. Fire up the spark-shell from the terminal and create a list as shown below.
-
-`spark-shell`
+**Step 1:** Let us create a RDD using the parallelize keyword. Fire up the notebook  and create a list as shown below.
 
 `val friends = List("Chandler", "Rachel", "Phoebe", "Joey", "Ross")` 
 
@@ -71,9 +42,17 @@ You have created your first RDD successfully. Please note that we are using the 
 
 Ratings.csv - http://bit.ly/2L8IEBS
 
+**Upload file in Databricks**
+
+![](./Screenshots/upload1.png)
+
+![](./Screenshots/upload2.png)
+
+![](./Screenshots/upload3.png)
+
 Each line of this file represents one rating of one movie by one user, and has the following format: userId,movieId,rating,timestamp
 
-`val ratings = sc.textFile("ernesto-spark/Files/chapter_3/ratings.csv")` 
+`val ratings = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")` 
 
 **Step 3:** We can now create a new RDD from the existing RDD. For example, let us count the number of ratings in the ratings RDD we created in the previous step.
  
@@ -82,16 +61,6 @@ Each line of this file represents one rating of one movie by one user, and has t
 ![](./Screenshots/Chapter_3/Selection_020.png)
  
 As you can see from the screenshot above, the count of the total records (ratings) present in the RDD has been returned as a new RDD called count_ratings.
-
-## Hadoop Distributed File System
-
-We can also create an RDD from data present in Hadoop Distributed File System (HDFS) using the same textFile API. But instead of local path, we have to provide a HDFS path.
-
-```
-val ratings = sc.textFile("hdfs://dev_server:9000/file.txt")
-```
-
-The RDD will be created using the data from HDFS and then you can continue to apply transformations and actions.
 
 Task is complete!
 

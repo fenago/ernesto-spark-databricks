@@ -8,17 +8,9 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
 
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
 
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab33`
 
 - Click **File Browser** tab on the top left and open `~/work/ernesto-spark/Files/chapter_10` to view files.
 
@@ -28,23 +20,10 @@ The aim of the following lab exercises is to read and write various file formats
 We will cover following topics in this scenario.
 - Hadoop and Sequence Files
 
-## Prerequisites
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- pyspark
 
 
-#### JAVA
-Verify the installation with: `java -version` 
 
-You'll see the following output:
 
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
 
 
 #### Install pyspark
@@ -92,17 +71,17 @@ This will create and RDD[(String, Int)] as shown below.
 
 **Step 2:** Let is now write the RDD to Sequence file format using the saveAsSequenceFile method as shown below.
 
-`seqRDD.saveAsSequenceFile("/home/jovyan/work/ernesto-spark/Files/chapter_10/seqOut")`
+`seqRDD.saveAsSequenceFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/seqOut")`
 
 You may run a cat command from another terminal to check if the save was successful, but the file will not be human readable.
 
 
-`ls ~/work/ernesto-spark/Files/chapter_10/seqOut`
+`ls ~/work/dbfs:/FileStore/shared_uploads/ather@ernesto.net/seqOut`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
 
-`cat ~/ernesto-spark/Files/chapter_10/seqOut/part*`
+`cat ~/dbfs:/FileStore/shared_uploads/ather@ernesto.net/part*`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
@@ -111,13 +90,10 @@ We know that the save was successful by looking at SEQ at the beginning of the f
 
 **Step 3:** Let us now read this Sequence file we just saved. Reading Sequence files is a bit different to what we have been doing so far. While reading the Sequence file, we need to specify the key and value data types also.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
-val  seqData = sc.sequenceFile("/home/jovyan/work/ernesto-spark/Files/chapter_10/seqOut/part-00001"
+val  seqData = sc.sequenceFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/part-00001"
 ,classOf[org.apache.hadoop.io.Text]
 ,classOf[org.apache.hadoop.io.IntWritable])
 ```
@@ -128,10 +104,7 @@ Since this is a Hadoop file format, we need to specify the data types in Hadoop.
 
 **Step 4:** However, since these are Hadoop data types, we cannot access the keys directly. We need to convert them to Java data types as shown below. The job will fail if we do not convert the data types and collect.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  newRDD = seqData.map
@@ -199,7 +172,7 @@ import org.apache.hadoop.mapred.KeyValueTextInputFormat
  
 **Step 3:** Let us now read the file using the hadoopFile API as shown below. This is the old Hadoop API.
 
-`val hadoopData = sc.hadoopFile[Text, Text, KeyValueTextInputFormat]("/home/jovyan/work/ernesto-spark/Files/chapter_10/part-r-00000")` 
+`val hadoopData = sc.hadoopFile[Text, Text, KeyValueTextInputFormat]("dbfs:/FileStore/shared_uploads/ather@ernesto.net/part-r-00000")` 
 
 ![](./Screenshots/Chapter_10/Selection_025.png)
 
@@ -207,10 +180,7 @@ We now have an RDD from Hadoop MapReduce output. However, in order to access the
 
 **Step 4:** Convert the data types from Hadoop types as shown below.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  hadoopRDD = hadoopData.map

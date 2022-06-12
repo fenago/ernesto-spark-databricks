@@ -16,7 +16,7 @@ object rddToDfUs500 {
       .master("local[*]")
       .getOrCreate()
 
-    val input = ss.sparkContext.textFile("/home/jovyan/work/ernesto-spark/Files/chapter_7/us-500.csv")
+    val input = ss.sparkContext.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/us-500.csv")
 
     val header = input.first()
     val records = input.filter(x => x != header)

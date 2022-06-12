@@ -28,7 +28,7 @@ object decrRatingUDF {
       .read
       .format("csv")
       .options(Map("InferSchema" -> "true", "header" -> "true"))
-      .load("/home/jovyan/work/ernesto-spark/Files/chapter_9/ratings_head.csv")
+      .load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings_head.csv")
       .as[Ratings]
 
     //Applying the UDF using DataFrame API

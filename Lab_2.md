@@ -8,57 +8,9 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
+#### Lab Solution
 
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
-
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
-
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab2`
-
-## Install Scala
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- Scala
-
-
-#### JAVA
-Verify the installation with: `java -version` 
-
-You'll see the following output:
-
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
-
-
-#### Install Scala
-
-**Note:** Scala is already installed. It is not required to run following commands to install.
-
-**Step 1:** Run the following commands from the terminal to install Scala.
-
-`wget www.scala-lang.org/files/archive/scala-2.12.8.deb`
-
-`dpkg -i scala-2.12.8.deb`
-
-
-**Step 2:** Verify your Scala installation version by running the following command.
- 
-`scala -version`
-
-You will get following output.
-
-```
-Scala code runner version 2.12.8 -- Copyright 2002-2018, LAMP/EPFL and Lightbend, Inc.
-```
+Lab solution is present in `solutions/lab_2.scala` file.
 
 ## Data Types in Scala
 
@@ -74,9 +26,6 @@ Data Type | Size
 `Boolean` | 1 bit
 `String` | Dynamic
 
-Type `scala` in your terminal and you will be prompted with a Scala prompt.
-
-`scala`
 
 **Step 1:** Let us now look into more data types as discussed in Data Types in Scala section and see how we can create them.
 
@@ -154,17 +103,8 @@ Loops are an essential part of any programming language and it is no different w
 
 As you can see from the screenshot, the console only prints out the statement which is true based on the condition.
 
-You can also write the if loop in the REPL in multiple lines using the paste mode as shown below. From the Scala prompt enter the following command and hit enter.
 
-`:paste`
-
-This will take you to the paste mode with a prompt to enter your code as shown in the screenshot.
-
-![](./Screenshots/Chapter_2/Selection_032.png)
-
-You can now enter Scala code in multiple lines. Once you are done with your code press Ctrl + D to come out of the paste mode and execute the code.
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+**Note:** After pasting following code in the notebook, Press  `Shift` + `Enter` to run code.
 
 ```
 val  numOfKids = 3
@@ -175,16 +115,16 @@ println("Parent unknown!")
 }
 ```
 
-The code is executed as soon as you have exited from the paste mode and result is displayed.
+Following result is displayed when you run the code.
 
 ![](./Screenshots/Chapter_2/Selection_033.png)
 
 If you do not want the last iteration to be included, you can use the keyword until instead of to. For example,
 
-`:paste`
 
 
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+
+**Note:** After pasting following code in the notebook, Press  `Shift` + `Enter` to run code.
 
 ```
 for ( i <- 1 until 5) {
@@ -197,9 +137,8 @@ for ( i <- 1 until 5) {
  
 We can also use an if statement within the for loop as shown below.
 
-`:paste`
 
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+**Note:** After pasting following code in the notebook, Press  `Shift` + `Enter` to run code.
 
 ```
 val  friends = List("Chandler", "Monica", "Rachel", "Ross", "Joey", "Phoebe")
@@ -216,11 +155,8 @@ In the above example, we are looping through the list of collection called frien
 
 **Step 3:** Let us now look at while and do while loops. The while construct is similar to that of other programming languages. However, in functional programming, the use of while loops is discouraged. 
 
-Enter into the paste mode and execute the following code.
 
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+**Note:** After pasting following code in the notebook, Press  `Shift` + `Enter` to run code.
 
 ```
 var friends = 0
@@ -241,11 +177,10 @@ The while loop runs every time the condition is satisfied and only comes out of 
 
 ## Do While Loop
 
-Now, enter into the paste mode again and execute the following code to perform a do while loop.
+Now, execute the following code to perform a do while loop.
 
-`:paste`
 
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+**Note:** After pasting following code in the notebook, Press  `Shift` + `Enter` to run code.
 
 ```
 var i = 0

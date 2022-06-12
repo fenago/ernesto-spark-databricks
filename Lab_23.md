@@ -8,35 +8,14 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
-
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
-
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
-
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab23`
-
-## Prerequisites
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- pyspark
 
 
-#### JAVA
-Verify the installation with: `java -version` 
 
-You'll see the following output:
 
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
+
+
+
+
 
 
 
@@ -87,10 +66,7 @@ As you can see, we have successfully casted the date column as date type.
 
 **Step 3:** Let us now extract the indivudual attributes from the date object such as day, month, year etc. We shall be using various functions to add columns for each function using the withColumn method.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  extracted = casted
@@ -110,10 +86,7 @@ We have used the year, month and dayofyear functions to extract the extract the 
 
 **Step 4:** Let us now use the arithmetic functions to manipulate the date.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  arithmetic = casted
@@ -144,10 +117,7 @@ val  arithmetic = casted
 
 **Step 5:** Next, let us use the timestamp functions. Since we have only created a date type in the previous dataset, let us create a timestamp type instead of date type. First, let us create the dataset and rename the columns as shown below.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  timeStamp = spark.createDataset(Seq(
@@ -159,10 +129,7 @@ val  timeStamp = spark.createDataset(Seq(
 ``` 
 
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  timeStampDS = timeStamp
@@ -192,10 +159,7 @@ As you can see, we have successfully casted the timestamp column from String typ
 
 **Step 7:** Let us now extract the attributes from timestamp column as we did for the date column couple of steps ago.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  extractedTs = timeStampDS
@@ -211,10 +175,7 @@ The output is shown when we use the show method.
 
 **Step 8:** Finally, let us use couple of conversion functions to convert the dates into different formats.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  conversions = timeStampDS

@@ -20,7 +20,7 @@ object avgRatings {
     Logger.getLogger("Org").setLevel(Level.ERROR)
 
     val sc = new SparkContext("local[*]", "Average ratings by users")
-    val data = sc.textFile("/home/jovyan/work/ernesto-spark/Files/chapter_5/ratings.csv")
+    val data = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")
     val RDDPair = data.map(parseRecords)
 
     RDDPair.collect.foreach(println)

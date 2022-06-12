@@ -8,17 +8,9 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
 
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
 
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab31`
 
 - Click **File Browser** tab on the top left and open `~/work/ernesto-spark/Files/chapter_10` to view files.
 
@@ -29,23 +21,10 @@ We will cover following topics in this scenario.
 - CSV Files
 - JSON Files
 
-## Prerequisites
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- pyspark
 
 
-#### JAVA
-Verify the installation with: `java -version` 
 
-You'll see the following output:
 
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
 
 
 #### Install pyspark
@@ -76,10 +55,7 @@ Each line of this file represents one rating of one movie by one user, and has t
 
 Open the terminal and fire up the Spark shell `spark-shell`.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val data = spark
@@ -88,7 +64,7 @@ val data = spark
 .option("InferSchema", "true")
 .option("header", "false")
 .option("nullValue", "Null")
-.load("/home/jovyan/work/ernesto-spark/Files/chapter_10/ratings.csv")
+.load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")
 ```
 
 We have used a new option here which is called NullValue. This will replace all the null values with the provided string, which is Null in this case. The default is "". Please check the references section for all the options that can be used while reading or writing CSV files. All the options can be used in this way or inside a map object.
@@ -101,10 +77,7 @@ We can then call the show method as shown in the screenshot below to check if it
 
 **Step 3:** We can also use the modes we have learned in our theory. Let us see an example.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  dataNew = spark
@@ -114,7 +87,7 @@ val  dataNew = spark
 , "header" -> "false"
 , "nullValue" -> "Null"
 , "mode" -> "FAILFAST"))
-.load("/home/jovyan/work/ernesto-spark/Files/chapter_10/ratings.csv")
+.load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")
 ```
 
 
@@ -125,19 +98,16 @@ val  dataNew = spark
 
 **Step 4:** Let us now write this dataframe back to the filesystem in CSV format.
 
-Enter into the paste mode and execute the following code.
-`:paste`
+Execute the following code in the notebook.
 
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
-
-`dataNew.write.format("csv").option("sep", "|").save("/home/jovyan/work/ernesto-spark/Files/chapter_10/output2")`
+`dataNew.write.format("csv").option("sep", "|").save("dbfs:/FileStore/shared_uploads/ather@ernesto.net/output2")`
 
 Here, we have used an option called sep which replaces the delimiter from comma to a pipe.
 
 **Step 5:** Let us check if the save was successful as we desired.
 
 
-`cat /home/jovyan/work/ernesto-spark/Files/chapter_10/output2/part*`
+`cat dbfs:/FileStore/shared_uploads/ather@ernesto.net/part*`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
@@ -162,16 +132,13 @@ example_1.json - http://bit.ly/2lRFI06
 
 **Step 2:** The following code is used to read the single line JSON file.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  jsonData = spark.read
 .format("json")
 .option("multiLine", "false")
-.load("/home/jovyan/work/ernesto-spark/Files/chapter_10/example_1.json")
+.load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/example_1.json")
 ```
 
 
@@ -191,28 +158,25 @@ example_2.json - http://bit.ly/2lL3IST
 
 **Step 5:** The following code is used to read the single line JSON file.
 
-Enter into the paste mode and execute the following code.
-`:paste`
-
-**Note:** After pasting following code in the scala terminal, Press  `Ctrl` + `D` to run code.
+Execute the following code in the notebook.
 
 ```
 val  multiJson = spark.read
     .format("json")
     .option("multiLine", "true")
-    .load("/home/jovyan/work/ernesto-spark/Files/chapter_10/example_2.json")
+    .load("dbfs:/FileStore/shared_uploads/ather@ernesto.net/example_2.json")
 ```
 
 
 **Step 6:** Let us now write this dataframe to the filsesystem.
 
-`multiJson.write.format("json").save("/home/jovyan/work/ernesto-spark/Files/chapter_10/output3")`
+`multiJson.write.format("json").save("dbfs:/FileStore/shared_uploads/ather@ernesto.net/output3")`
  
 #### Output
 You can check the output by running the following command from a new terminal.
 
 
-`cat /home/jovyan/work/ernesto-spark/Files/chapter_10/output3/part*`
+`cat dbfs:/FileStore/shared_uploads/ather@ernesto.net/part*`
 
 Run above command in **terminal 2**. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 

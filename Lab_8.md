@@ -8,48 +8,18 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
-
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
-
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
-
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab8`
 
 ## RDD Caching and Persistence
 
 RDD Caching and RDD Persistence play very important role in processing data with Spark. With caching and persistence, we will be able to store the RDD in-memory so that we do not have to recompute or evaluate the same RDD again, if required. This is an optimization technique which helps to complete jobs more quickly by saving the evaluation of RDD in memory.
 
-## Prerequisites
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- pyspark
-
-
-#### JAVA
-Verify the installation with: `java -version` 
-
-You'll see the following output:
-
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
 
 ## RDD
 
-Fire up the spark-shell from the terminal and create a list as shown below.
-`spark-shell`
 
 Let us understand this better with an example. The default behavior is that an RDD is computed every time an action is called on the RDD. Look at the following piece of code below.
 
-`val data = sc.textFile("/home/jovyan/work/ernesto-spark/Files/chapter_4/treasure_island.txt")` 
+`val data = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/treasure_island.txt")` 
 
 The above line simply loads a text file using the textFile API and stores it to an RDD called data.
 
@@ -78,7 +48,7 @@ MEMORY_ONLY` | 	This is the default storage level. The RDD when cached is stored
 
 Let's go back to our example and see how we can use cache() and persist() methods.
 
-`val data2 = sc.textFile("/home/jovyan/work/ernesto-spark/Files/chapter_4/treasure_island.txt")` 
+`val data2 = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/treasure_island.txt")` 
 
 Once we load the file using the TextFile API, we can now cache or persist the data RDD. Before we can cache or persist we have to import the following.
 
@@ -88,13 +58,7 @@ And then use the cache() method, if we need the default implementation of storag
 
 `data2.cache()` 
 
-## Persist
-
-However, if we want to use the various storage levels as explained above, we have to use the persist() method and specify the desired storage level. So the code will look like:
-
-`data2.persist(StorageLevel.MEMORY_AND_DISK_SER)` 
-
-At this point of time, we have simply specified out storage level for persistence. The actual persistence happens when the action on the RDD is called.
+The actual persistence happens when the action on the RDD is called.
 
 `data2.take(5)` 
 

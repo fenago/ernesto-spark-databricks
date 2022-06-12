@@ -1,30 +1,21 @@
-package training
-
 import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.log4j._
 
 
-object wordCount {
+Logger.getLogger("Org").setLevel(Level.ERROR)
+val sparkSession = SparkSession.builder
+  .master("local[*]")
+  .appName("WordCount")
+  .getOrCreate()
+val sc = sparkSession.sparkContext
+val data = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/treasure_island.txt")
+val words = data.flatMap(lines => lines.split(" "))
+val wordskv = words.map(word => (word,1))
+val count = wordskv.reduceByKey((x,y) => x + y)
 
-  def main(args: Array[String]): Unit = {
+count.collect.foreach(println)
 
-    Logger.getLogger("Org").setLevel(Level.ERROR)
+//count.saveAsTextFile("chapter_4/word_count/output")
 
-    val sc = new SparkContext("local[*]", "WordCount")
-    val data = sc.textFile("/home/jovyan/work/ernesto-spark/Files/chapter_4/treasure_island.txt")
-    val words = data.flatMap(lines => lines.split(" "))
-    val wordskv = words.map(word => (word,1))
-    val count = wordskv.reduceByKey((x,y) => x + y)
-
-    count.collect.foreach(println)
-
-    //count.saveAsTextFile("chapter_4/word_count/output")
-
-    //count.toDebugString.foreach(print)
-
-    sc.stop()
-
-  }
-
-}
+//count.toDebugString.foreach(print)

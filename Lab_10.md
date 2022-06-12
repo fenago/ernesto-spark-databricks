@@ -8,17 +8,9 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
 
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
 
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab10`
 
 
 **Note:**
@@ -29,28 +21,14 @@ You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab10`
 ![](./Screenshots/scala.png)
 
 
-The aim of the following lab exercises is to start writing Spark code in **vscode** editor to learn about Paired RDDs.
+The aim of the following lab exercises is to start writing Spark code in editor to learn about Paired RDDs.
 We will cover following topics in this scenario.
 - Creating a Paired RDD
 - Performing Operations on Paired RDD
 
-## Prerequisites
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- SBT
 
 
-#### JAVA
-Verify the installation with: `java -version` 
 
-You'll see the following output:
-
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
 
 
 #### SBT
@@ -158,7 +136,7 @@ val RDDValues = flattened.values
 RDDValues.collect.foreach(println)
 ```
 
-**Important:** You need to uncomment above line in `tags.scala` using **vscode** editor before running program again.
+**Important:** You need to uncomment above line in `tags.scala` using editor before running program again.
 
 ![](./Screenshots/Chapter_5/Selection_034.png)
 

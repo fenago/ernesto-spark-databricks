@@ -11,7 +11,7 @@ object counters {
     Logger.getLogger("Org").setLevel(Level.ERROR)
 
     val sc = new SparkContext("local[*]", "Counters")
-    val data = sc.textFile("/home/jovyan/work/ernesto-spark/Files/chapter_6/ratings-malformed.csv")
+    val data = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings-malformed.csv")
 
     val badRecords = sc.accumulator(0, "bad records")
 

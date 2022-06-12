@@ -1,12 +1,7 @@
-package training
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.types.{DoubleType, IntegerType, StringType, StructField, StructType}
-
-object createDf {
-
-  def main(args: Array[String]): Unit = {
 
     val ss = SparkSession
       .builder()
@@ -14,7 +9,7 @@ object createDf {
       .master("local[*]")
       .getOrCreate()
 
-    val input = ss.sparkContext.textFile("/home/jovyan/work/ernesto-spark/Files/chapter_7/mlb_players.csv")
+    val input = ss.sparkContext.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/mlb_players.csv")
 
     val header = input.first()
     val records = input.filter(x => x != header)
@@ -36,9 +31,4 @@ object createDf {
     val recordsDf = ss.sqlContext.createDataFrame(structRecords, schema)
 
     recordsDf.show()
-	
-	ss.stop()
 
-  }
-
-}

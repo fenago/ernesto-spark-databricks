@@ -9,7 +9,7 @@ object ratingsByMovies {
 
     var movieNames: Map[Int, String] = Map()
 
-    val data = Source.fromFile("/home/jovyan/work/ernesto-spark/Files/chapter_6/movies.csv").getLines()
+    val data = Source.fromFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/movies.csv").getLines()
 
     for(record <- data){
       val fields = record.split(",")
@@ -25,7 +25,7 @@ object ratingsByMovies {
 
     val broadNames = sc.broadcast(loadMovieNames)
 
-    val data = sc.textFile("/home/jovyan/work/ernesto-spark/Files/chapter_6/ratings.csv")
+    val data = sc.textFile("dbfs:/FileStore/shared_uploads/ather@ernesto.net/ratings.csv")
     val records = data.map(x => (x.split(",")(1).toInt, 1))
     val count = records.reduceByKey((x,y) => x + y)
     val sorted = count.sortBy(-_._2)

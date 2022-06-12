@@ -8,17 +8,9 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
 
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
 
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
 
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab18`
 
 **Note:**
 - The supplied commands in the next steps MUST be run from your `~/work/ernesto-spark` directory. 
@@ -27,7 +19,7 @@ You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab18`
 
 ![](./Screenshots/scala.png)
 
-The aim of the following lab exercises is to start writing Spark SQL code in **vscode** editor to learn about Data Frames.
+The aim of the following lab exercises is to start writing Spark SQL code in editor to learn about Data Frames.
 We will cover following topics in this scenario.
 - Querying data using Spark SQL
 
@@ -114,7 +106,7 @@ val totalUsersNJ = spark.sql("SELECT count(*) AS NJ_Count FROM users WHERE state
 totalUsersNJ.show()
 ```
 
-**Important:** You need to uncomment above line in `sqlQueries.scala` using **vscode** editor before running program again.
+**Important:** You need to uncomment above line in `sqlQueries.scala` using editor before running program again.
 
 `rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.sqlQueries"` 
 
@@ -133,7 +125,7 @@ val userCountByState = spark.sql("SELECT state, count(*) AS count FROM users GRO
 userCountByState.show()
 ```
 
-**Important:** You need to uncomment above line in `sqlQueries.scala` using **vscode** editor before running program again.
+**Important:** You need to uncomment above line in `sqlQueries.scala` using editor before running program again.
 
 `rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.sqlQueries"` 
 
@@ -175,9 +167,9 @@ Now run the program as you did in the previous task and check the output directo
 
 #### Output Files
 
-`ls ~/work/ernesto-spark/Files/chapter_7/output` 
+`ls ~/work/dbfs:/FileStore/shared_uploads/ather@ernesto.net/output` 
 
-`cat ~/ernesto-spark/Files/chapter_7/output/part-*` 
+`cat ~/dbfs:/FileStore/shared_uploads/ather@ernesto.net/part-*` 
 
 Open the `part-00000-<guid>` file and you should see the result.
 

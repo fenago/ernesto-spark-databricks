@@ -8,71 +8,6 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
-**Note:** Labs will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
-
-Lab instructions and scala examples are present in `~/work/ernesto-spark` folder. To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
-
-There should be terminal(s) opened already. You can also open New terminal by Clicking `File` > `New` > `Terminal` from the top menu.
-
-Now, move in the directory which contains the scala source code by running following command in the terminal.
-
-`cd ~/work/ernesto-spark`
-
-You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab6`
-
-
-**Note:**
-- The supplied commands in the next steps MUST be run from your `~/work/ernesto-spark` directory. 
-- Final code was already cloned from github for this scenario. You can just understand the application code in the next steps and run it using the instructions.
-- Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/wordCount.scala` to view scala file.
-
-![](./Screenshots/scala.png)
-
-## Prerequisites
-
-We need following packages to perform the lab exercise: 
-- Java Development Kit
-- SBT
-
-
-#### JAVA
-Verify the installation with: `java -version` 
-
-You'll see the following output:
-
-```
-java version "1.8.0_201"
-Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
-```
-
-
-#### Install SBT
-
-**Step 1:** Run the following commands from the terminal to install sbt.
-
-`echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list` 
-
-`curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add` 
-
-`sudo apt-get update` 
-
-`sudo apt-get install sbt && sbt sbtVersion > /dev/null 2>&1` 
-
-**Step 2:** Verify your sbt installation version by running the following command.	
-
-`sbt sbtVersion`	
-
-You will get following output.
-
-```	
-[info] Loading project definition from /home/jovyan/work/ernesto-spark/project	
-[info] Loading settings for project apache-spark from build.sbt ...	
-[info] Set current project to Spark (in build file:/home/jovyan/work/ernesto-spark/)	
-[info] 1.3.2
-```
-
-**Note:** If you get an error first time, please run the command again.
 
 ## WordCount Example
 
@@ -114,7 +49,7 @@ We are creating an immutable variable called sc which cotains the SparkContext o
 **Step 8:** We now have a SparkContext object created. We can now use this object and load data using the textFile API as we have done in the Spark Shell. 
  
 
-We already have cloned a github repository which contains a text file `treasure_island.txt`. Open `~/work/ernesto-spark/Files/chapter_4/treasure_island.txt` to view text file. Write the following line of code to load the file to create an RDD.
+We already have cloned a github repository which contains a text file `treasure_island.txt`. Open `treasure_island.txt` to view text file. Write the following line of code to load the file to create an RDD.
 
 ```
 val data = sc.textFile("chapter_4/treasure_island.txt")
@@ -171,13 +106,11 @@ We can now simply use collect to collect the final RDD which is count and use fo
 
 This completes our first ever Spark program. All we need to do now is to run it.
 
-## Run Program
+## Lab Solution
 
-**Step 5:** To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
+Lab solution is present in `wordCount.scala` file.
 
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.wordCount"` 
-
-Once you click above command, `sbt` will start executing the program by first compiling and then display the result in the bottom. The execution might take some time based upon the hardware configuration of your machine.
+The execution might take some time based upon the hardware configuration of your machine.
 
 ![](./Screenshots/Chapter_4/Selection_018.png)
 
@@ -193,20 +126,10 @@ The output displayed in the console is useful while developing but in the real t
 count.saveAsTextFile("chapter_4/word_count/output")
 ```
 
-**Important:** You need to uncomment above line in `wordCount.scala` using **vscode** editor before running program again.
+**Important:** You need to uncomment above line in `wordCount.scala` using editor before running program again.
 
 We shall be saving the output to the following path IdeaProjects/Spark/chapter_4/word_count/output. You need not create the directories word_count and output. They will be automatically created. In fact the compiler will throw an error if the output directory is already present.
 
-
-**Step 2:** Now run the program as you did in the previous task and check the output directory. You should see two files: part-00000 and a _SUCCESS file. The output is saved in part-00000 file.
- 
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.wordCount"` 
-
-Open the `part-00000` file and you should see the result as shown below.
-
-`ls ~/work/ernesto-spark/chapter_4/word_count/output` 
-
-`cat ~/ernesto-spark/chapter_4/word_count/output/part-00000` 
 
 ## Spark Program – Lineage Graph
 
@@ -218,18 +141,8 @@ Let us now check the Lineage Graph for our Word Count program.
 count.toDebugString.foreach(print)
 ```
 
-**Important:** 
-- You need to add above line in `wordCount.scala` using file editor before running program again. 
-- Also, comment line **22** which we added in the previous step as shown below.
-
-![](./Screenshots/comment.JPG)
-
 
 Please note that we have used print inside foreach and not println.
-
-**Step 2:** Run the program as you did before and you should see the output as shown below.
-
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.wordCount"` 
 
 ![](./Screenshots/Chapter_4/Selection_023.png)
 
