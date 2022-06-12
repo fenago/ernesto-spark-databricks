@@ -2,7 +2,7 @@
 println("Hello World!")
 
 val name: String = "Learning Voyage"
-
+println(name)
 
 // COMMAND ----------
 
