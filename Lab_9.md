@@ -8,6 +8,15 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
+**Upload file in Databricks**
+
+Make sure to upload data files used in the lab as shown below:
+
+![](./Screenshots/upload1.png)
+
+![](./Screenshots/upload2.png)
+
+![](./Screenshots/upload3.png)
 
 #### Lab Solution
 Open https://github.com/fenago/ernesto-spark-databricks/tree/master/src/main/scala/training/avgRatings.scala to view scala file.

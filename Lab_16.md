@@ -13,6 +13,16 @@ All packages have been installed. There is no requirement for any setup.
 Open https://github.com/fenago/ernesto-spark-databricks/tree/master/src/main/scala/training/users.scala to view scala file.
 
 
+**Upload file in Databricks**
+
+Make sure to upload data files used in the lab as shown below:
+
+![](./Screenshots/upload1.png)
+
+![](./Screenshots/upload2.png)
+
+![](./Screenshots/upload3.png)
+
 
 The aim of the following lab exercises is to start writing Spark SQL code in editor to learn about Data Frames.
 We will cover following topics in this scenario.
