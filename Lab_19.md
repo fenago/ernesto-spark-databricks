@@ -93,8 +93,8 @@ joinedDf.show()
 ```
 
 
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.sqlJoins"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`sqlJoins.scala` 
 
 You should see the joined table as shown in the screenshot below.
 
@@ -166,8 +166,8 @@ Let us call the show method.
 userCountByState.show()
 ```
 
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.dfOps"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`dfOps.scala` 
 
 The output is as shown in the screenshot below.
 

@@ -156,8 +156,8 @@ println(mappedCol)
 ```
 
 #### Compile and Run
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.joins"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`joins.scala` 
 
 The result is shown as an ArrayBuffer for all the values of the key.
 

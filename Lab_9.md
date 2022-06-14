@@ -122,9 +122,9 @@ That's it. We now have our paired RDD. You can optionally take a look at the RDD
 PS: Using collect is not recommended if your data is very big. When collect is used, all the data is shuffled to the driver node and if there is not enough memory available in the driver node, the job will throw an memory exception error.
 
 #### Compile and Run
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
 
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.avgRatings"` 
+`avgRatings.scala` 
 
 You should have the output in the console with the key-value pairs as shown in the screenshot below.
 
@@ -181,9 +181,9 @@ avgRatings.collect.foreach(println)
  
 **Important:** You need to uncomment above line in `avgRatings.scala` using editor before running program again.
 
-**Step 5:** To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
+**Step 5:** To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
 
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.avgRatings"` 
+`avgRatings.scala` 
 
 Once the job is finished, check the output in the console as shown in the screenshot below.
 
@@ -238,7 +238,7 @@ Task is complete!
 
 **Important:** You can run all of above one by one be editing `avgRatings.scala` using editor before running program.
 
-To run the program from the terminal, simply run the following command. The program will the then be compiled and executed.
+To run this program, run the following scala file code in the databricks notebook:
 
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.avgRatings"` 
+`avgRatings.scala` 
 

@@ -127,8 +127,8 @@ ratingDecDf.show()
 
  
 #### Compile and Run
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.decrRatingUDF"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`decrRatingUDF.scala` 
 
 The output should be displayed as shown in the screenshot below, when you run the program.
 
@@ -180,8 +180,8 @@ ratingDecDf.show()
 **Important:** You need to uncomment above line in `decrRatingUDF.scala` using editor before running program again.
 
 #### Compile and Run
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.decrRatingUDF"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`decrRatingUDF.scala` 
 
 
 The following output is shown.

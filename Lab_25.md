@@ -156,8 +156,8 @@ employeeDS.select($"*", rowNumber.as("rowNumber")).show()
 ```
 
 #### Compile and Run
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.window"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`window.scala` 
 
 The following output is shown when we run the program.
 
@@ -208,8 +208,8 @@ The following output is shown when we run the program.
 
 
 #### Compile and Run
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.window"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`window.scala` 
 
 Task is complete!
 

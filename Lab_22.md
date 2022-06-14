@@ -109,8 +109,8 @@ byUser.show()
 
 
 #### Compile and Run
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.builtInFunctions"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`builtInFunctions.scala` 
 
 The following result should be shown.
 
@@ -226,8 +226,8 @@ sorted.show()
 ```
  
 #### Compile and Run
-To run this program from the terminal, simply run the following command. The program will the then be compiled and executed.
-`rm -rf ~/work/ernesto-spark/src/main/scala/training/.ipynb_checkpoints/ && sbt "runMain training.collections"` 
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+`collections.scala` 
 
 Task is complete!
 
