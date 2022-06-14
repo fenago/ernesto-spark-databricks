@@ -169,7 +169,7 @@ Now that we have successfully written our untyped UDAF, let us use it find the a
 ```
 object avgRatingUDAF {
 
-  def main(args: Array[String]) {
+  
 
     val sparkSession = SparkSession.builder
       .master("local[*]")

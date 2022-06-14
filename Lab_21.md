@@ -50,10 +50,10 @@ case class Players(player_name: String, team: String, position: String, height: 
 ```
 
 
-**Step 4:** Let us now write the main function for our program and create a SparkSession object as shown below.
+**Step 4:** Let us now write our program and create a SparkSession object as shown below.
 
 ```
-def main(args: Array[String]): Unit = {
+
 
   val spark = SparkSession
     .builder()

@@ -19,19 +19,23 @@ object ratingsByMovies {
     movieNames
   }
 
+  val sparkSession = SparkSession.builder
+  .master("local[*]")
+  .appName("Ratings By movies")
+  .getOrCreate()
 
-    val sc = new SparkContext("local[*]", "Ratings By movies")
+  val sc = sparkSession.sparkContext
 
-    val broadNames = sc.broadcast(loadMovieNames)
+  val broadNames = sc.broadcast(loadMovieNames)
 
-    val data = sc.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings.csv")
-    val records = data.map(x => (x.split(",")(1).toInt, 1))
-    val count = records.reduceByKey((x,y) => x + y)
-    val sorted = count.sortBy(-_._2)
+  val data = sc.textFile("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings.csv")
+  val records = data.map(x => (x.split(",")(1).toInt, 1))
+  val count = records.reduceByKey((x,y) => x + y)
+  val sorted = count.sortBy(-_._2)
 
-    val sortedMoviesWithNames = sorted.map(x => (broadNames.value(x._1), x._2))
+  val sortedMoviesWithNames = sorted.map(x => (broadNames.value(x._1), x._2))
 
-    sortedMoviesWithNames.collect.foreach(println)
+  sortedMoviesWithNames.collect.foreach(println)
 
     
   }

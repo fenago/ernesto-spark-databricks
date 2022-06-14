@@ -133,7 +133,6 @@ case class Movies(userId: Int, movieId: Int, rating : Double, timeStamp: String)
 **Step 9:** Let us now write our main function and create a SparkSession object. 
 
 ```
-def main(args: Array[String]) {
 
   val sparkSession = SparkSession.builder.
     master("local[*]")

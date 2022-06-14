@@ -53,17 +53,18 @@ import org.apache.log4j._
 
  
 ```
-def main(args: Array[String]): Unit = {
-
-  Logger.getLogger("Org").setLevel(Level.ERROR)
+Logger.getLogger("Org").setLevel(Level.ERROR)
 ```
 
 Also, create a SparkContext object and enter the master  as local to use all the cores and the name of the app as Counters.
 
 ```
-val sc = new SparkContext("local[*]", "Counters")
+val sparkSession = SparkSession.builder
+.master("local[*]")
+.appName("Counters")
+.getOrCreate()
 
-Your code so far should look like the one in screenshot below.
+val sc = sparkSession.sparkContext
 ```
 
 **Step 4:** Now that we have the SparkContext object created, let us load our file using the textFile API.

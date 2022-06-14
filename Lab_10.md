@@ -54,11 +54,13 @@ val tags = records(2).toString
 **Step 4:** Create a paired RDD as in Task 2 by writing the main function, setting error log level (optional), creating a SparkContext object and loading the file using the textFile API.
 
 ```
-def main(args: Array[String]): Unit = {
+Logger.getLogger("Org").setLevel(Level.ERROR)
+val sparkSession = SparkSession.builder
+.master("local[*]")
+.appName("Paired RDD Operations")
+.getOrCreate()
 
-  Logger.getLogger("Org").setLevel(Level.ERROR)
-
-val sc = new SparkContext("local[*]", "Paired RDD Operations")
+val sc = sparkSession.sparkContext
 
 val data = sc.textFile("chapter_5/tags.csv")
 ```

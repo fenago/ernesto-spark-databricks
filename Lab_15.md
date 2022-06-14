@@ -84,15 +84,17 @@ Next, we load the data from our file using Source.fromFile method and call getli
 
 
 
-**Step 3:** Let us now write our main function, create a SparkContext object and declare our broadcast variable.
+**Step 3:** Let us now create a SparkContext object and declare our broadcast variable.
 
 ```
-def main(args: Array[String]): Unit = {
+val sparkSession = SparkSession.builder
+.master("local[*]")
+.appName("Ratings By movie")
+.getOrCreate()
 
+val sc = sparkSession.sparkContext
 
-  val sc = new SparkContext("local[*]", "Ratings By movie ")
-
-  val broadNames = sc.broadcast(loadMovieNames)
+val broadNames = sc.broadcast(loadMovieNames)
 ```
 
 We can create a broadcast variable by simply calling the broadcast method on our SparkContext object. We then pass our loadMovieNames function as parameter to the broadcast method since loadMovieNames function returns a Map object, we will have the Map object broadcasted to all the nodes of the cluster.

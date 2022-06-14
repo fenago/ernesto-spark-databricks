@@ -4,25 +4,29 @@ import org.apache.spark.SparkContext._
 import org.apache.log4j._
 
 
-  case class ratings(userId: Int, movieID: Int, rating: Float, timestamp: String)
-  case class movies(movieID: Int, movieName: String, genre:String)
-  
-
-    Logger.getLogger("Org").setLevel(Level.ERROR)
+case class ratings(userId: Int, movieID: Int, rating: Float, timestamp: String)
+case class movies(movieID: Int, movieName: String, genre:String)
 
 
-    val sc = new SparkContext("local[*]", "Joins")
-    val rating = sc.textFile("chapter_5/ratings.csv").map(_.split(','))
-    val movie = sc.textFile("chapter_5/movies.csv").map(_.split(','))
+Logger.getLogger("Org").setLevel(Level.ERROR)
 
-    val rating_record = rating.map(x => (x(1).toInt, ratings(x(0).toInt, x(1).toInt,
-         x(2).toFloat, x(3).toString)))
+val sparkSession = SparkSession.builder
+.master("local[*]")
+.appName("Joins")
+.getOrCreate()
 
-       val movie_record = movie.map(x => (x(0).toInt, movies(x(0).toInt, x(1).toString,
-         x(2).toString)))
+val sc = sparkSession.sparkContext
+val rating = sc.textFile("chapter_5/ratings.csv").map(_.split(','))
+val movie = sc.textFile("chapter_5/movies.csv").map(_.split(','))
 
-    val joined = rating_record.join(movie_record)
+val rating_record = rating.map(x => (x(1).toInt, ratings(x(0).toInt, x(1).toInt,
+      x(2).toFloat, x(3).toString)))
 
-    joined.collect.foreach(println)
+    val movie_record = movie.map(x => (x(0).toInt, movies(x(0).toInt, x(1).toString,
+      x(2).toString)))
+
+val joined = rating_record.join(movie_record)
+
+joined.collect.foreach(println)
 
 

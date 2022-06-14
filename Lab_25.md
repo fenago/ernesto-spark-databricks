@@ -56,7 +56,7 @@ We have created a case class and named it Employee by specifying the fields and 
 **Step 3:** Now, write the main function and create the SparkSession object as shown below.
 
 ```
-def main(args: Array[String]): Unit = {
+
 
   val spark = SparkSession
     .builder()

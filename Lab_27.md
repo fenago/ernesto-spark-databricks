@@ -83,7 +83,7 @@ case class Ratings(userId: Int, movieID: Int, rating: Double, timeStamp: String)
 Next, define the main function, create a Spark Session and load the file as dataset as shown below.
 
 ```
-def main(args: Array[String]): Unit = {
+
 
   val spark = SparkSession
     .builder()

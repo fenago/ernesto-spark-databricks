@@ -83,7 +83,7 @@ If there is an error saying that the case class Movies is already defined, chang
 **Step 3:** Now, write the main function and create the SparkSession object as shown below.
 
 ```
-def main(args: Array[String]): Unit = {
+
 
   val spark = SparkSession
     .builder()

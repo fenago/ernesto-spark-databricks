@@ -46,11 +46,9 @@ We shall join these datasets based on the movieID.
 import org.apache.spark.sql.SparkSession
 ```
 
-Then write the main function for our program and create a SparkSession object as shown below.
+Then write our program and create a SparkSession object as shown below.
 
 ```
-def main(args: Array[String]): Unit = {
-
   val spark = SparkSession
     .builder()
     .appName("SQL Joins")

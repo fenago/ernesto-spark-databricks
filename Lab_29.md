@@ -131,7 +131,6 @@ The program should now look like the one shown in the screenshot.
 ```
 object avgTypedUDAF {
 
-  def main(args: Array[String]) {
 
     val sparkSession = SparkSession.builder
       .master("local[*]")

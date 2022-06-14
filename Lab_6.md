@@ -21,16 +21,8 @@ import org.apache.log4j._
 
 The first two import statements are used to import the Spark packages and last import statement is used to set logging level for our Spark application.
 
-**Step 5:** Once we have the required imports, we need to write the main function similar to that of Java. This is the starting point for the compiler to execute our program. 
 
-```
-def main(args: Array[String]): Unit = {
-```
-
-The main function takes an argument args which is an Array of String type and does not return anything. Unit represents no return value similar to void in Java. It is optional to mention the return type.
-
-
-**Step 6:** Let us declare the level of logging to only log the error and fatal messages.
+**Step 2:** Let us declare the level of logging to only log the error and fatal messages.
 
 ```
 Logger.getLogger("Org").setLevel(Level.ERROR)
@@ -38,7 +30,7 @@ Logger.getLogger("Org").setLevel(Level.ERROR)
 
 This step is not mandatory and you may skip this if you want all the logs.
 
-**Step 7:** Let us now create a SparkContext object so that we can access all the spark functionality.
+**Step 3:** Let us now create a SparkContext object so that we can access all the spark functionality.
 
 ```
 val sparkSession = SparkSession.builder
@@ -51,7 +43,7 @@ val sc = sparkSession.sparkContext
 
 We are creating an immutable variable called sc which cotains the SparkContext object. Inside the SparkContext object the first parameter tells Spark if we would want the program to be executed in local or distributed mode. In our case, since we are working locally, we will be using local[*]. The [*] tells Spark to use all the CPU cores available locally in our machine. The next parameter is just the name of our app which is WordCount.
 
-**Step 8:** We now have a SparkContext object created. We can now use this object and load data using the textFile API as we have done in the Spark Shell. 
+**Step 4:** We now have a SparkContext object created. We can now use this object and load data using the textFile API as we have done in the Spark Shell. 
  
 
 We already have cloned a github repository which contains a text file `treasure_island.txt`. Open `treasure_island.txt` to view text file. Write the following line of code to load the file to create an RDD.
