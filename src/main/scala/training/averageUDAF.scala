@@ -1,4 +1,4 @@
-package training
+
 
 import org.apache.spark.sql.expressions
 .{UserDefinedAggregateFunction, MutableAggregationBuffer}
@@ -60,6 +60,6 @@ object avgRatingUDAF {
 
     average.show()
 	
-	sparkSession.stop()
+	
   }
 }

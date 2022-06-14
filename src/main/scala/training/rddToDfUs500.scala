@@ -1,4 +1,4 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 
@@ -8,7 +8,6 @@ object rddToDfUs500 {
                      city: String, county: String, state: String, zip: Int, phone1: String,
                      phone2: String, web: String)
 
-  def main(args: Array[String]): Unit = {
 
     val ss = SparkSession
       .builder()

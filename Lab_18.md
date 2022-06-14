@@ -8,16 +8,10 @@
 #### Lab Environment
 All packages have been installed. There is no requirement for any setup.
 
+#### Lab Solution
+Open https://github.com/fenago/ernesto-spark-databricks/tree/master/src/main/scala/training/sqlQueries.scala to view scala file.
 
 
-
-
-**Note:**
-- The supplied commands in the next steps MUST be run from your `~/work/ernesto-spark` directory. 
-- Final code was already cloned from github for this scenario. You can just understand the application code in the next steps and run it using the instructions.
-- Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/sqlQueries.scala` to view scala file.
-
-![](./Screenshots/scala.png)
 
 The aim of the following lab exercises is to start writing Spark SQL code in editor to learn about Data Frames.
 We will cover following topics in this scenario.
@@ -178,51 +172,6 @@ Open the `part-00000-<guid>` file and you should see the result.
 This way you can perform any operations using the SQL data manipulation language. 
 
 Task is complete!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

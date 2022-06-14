@@ -1,10 +1,9 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 
 object collections {
 
-  def main(args: Array[String]): Unit = {
 
     val spark = SparkSession
       .builder()
@@ -35,7 +34,7 @@ object collections {
     val sorted = numDS.select($"numbers", sort_array($"numbers", false).as("sorted"))
     sorted.show()
 
-	spark.stop()
+
 	
   }
 

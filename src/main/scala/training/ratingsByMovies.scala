@@ -1,4 +1,4 @@
-package training
+
 
 import org.apache.spark.SparkContext
 import scala.io.Source
@@ -19,7 +19,6 @@ object ratingsByMovies {
     movieNames
   }
 
-  def main(args: Array[String]): Unit = {
 
     val sc = new SparkContext("local[*]", "Ratings By movies")
 
@@ -34,7 +33,7 @@ object ratingsByMovies {
 
     sortedMoviesWithNames.collect.foreach(println)
 
-    sc.stop()
+    
   }
 
 }

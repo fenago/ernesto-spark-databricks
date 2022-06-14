@@ -9,38 +9,15 @@
 All packages have been installed. There is no requirement for any setup.
 
 
+#### Lab Solution
+Open https://github.com/fenago/ernesto-spark-databricks/tree/master/src/main/scala/training/CountByMovie.scala to view scala file.
 
 
-
-
-**Note:**
-- The supplied commands in the next steps MUST be run from your `~/work/ernesto-spark` directory. 
-- Final code was already cloned from github for this scenario. You can just understand the application code in the next steps and run it using the instructions.
-- Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/CountByMovie.scala` to view scala file.
-
-![](./Screenshots/scala.png)
 
 We will cover following topics in this scenario.
 - Implementing Custom Accumulators
 
 
-
-
-
-
-#### SBT
-Verify your sbt installation version by running the following command.	
-
-`sbt sbtVersion`	
-
-You will get following output. If you get an error first time, please run the command again.
-
-```	
-[info] Loading project definition from /home/jovyan/work/ernesto-spark/project	
-[info] Loading settings for project apache-spark from build.sbt ...	
-[info] Set current project to Spark (in build file:/home/jovyan/work/ernesto-spark/)	
-[info] 1.3.2
-```
 
 ## Implementing Custom Accumulators V2
 
@@ -54,7 +31,7 @@ Ratings_head.csv - http://bit.ly/2X3r2wb
 
 ## Custom Accumulators...
 
-**Step 2:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/CountByMovie.scala` to view scala file.
+**Step 2:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/CountByMovie.scala to view scala file.
 
 ```
 import org.apache.spark.util.AccumulatorV2
@@ -139,7 +116,7 @@ These are the abstract methods which must be implemented in our code as they are
 
 The error for the class name should be gone now. With this we have successfully implemented our Accumulator V2. We now have to use this custom accumulator in our main program.
 
-**Step 8:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/countByMovieMain.scala` to view scala file.
+**Step 8:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/countByMovieMain.scala to view scala file.
 
 ```
 import org.apache.spark.sql.SparkSession
@@ -216,46 +193,6 @@ Please note caution while using accumulators. If the output generated from the a
 Task is complete!
 
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

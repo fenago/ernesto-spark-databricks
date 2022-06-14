@@ -1,4 +1,3 @@
-package training
 
 import org.apache.spark.sql.expressions.Aggregator
 import org.apache.spark.sql.{Encoder, Encoders, SparkSession}
@@ -32,7 +31,6 @@ object averageTypedUDAF extends Aggregator[Ratings, Average, Double] {
 
 object avgTypedUADF{
 
-  def main(args: Array[String]): Unit = {
 
     val sparkSession = SparkSession.builder
       .master("local[*]")
@@ -52,7 +50,7 @@ object avgTypedUADF{
 
     avg.show()
 	
-	sparkSession.stop()
+	
   }
 
 }

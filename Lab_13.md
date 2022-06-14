@@ -9,16 +9,10 @@
 All packages have been installed. There is no requirement for any setup.
 
 
+#### Lab Solution
+Open https://github.com/fenago/ernesto-spark-databricks/tree/master/src/main/scala/training/countersV2.scala to view scala file.
 
 
-
-
-**Note:**
-- The supplied commands in the next steps MUST be run from your `~/work/ernesto-spark` directory. 
-- Final code was already cloned from github for this scenario. You can just understand the application code in the next steps and run it using the instructions.
-- Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/countersV2.scala` to view scala file.
-
-![](./Screenshots/scala.png)
 
 We will cover following topics in this scenario.
 - Using Accumulator Method
@@ -35,23 +29,6 @@ We need the following packages to perform the lab exercise:
 
 
 
-
-
-
-#### SBT
-Verify your sbt installation version by running the following command.	
-
-`sbt sbtVersion`	
-
-You will get following output. If you get an error first time, please run the command again.
-
-```	
-[info] Loading project definition from /home/jovyan/work/ernesto-spark/project	
-[info] Loading settings for project apache-spark from build.sbt ...	
-[info] Set current project to Spark (in build file:/home/jovyan/work/ernesto-spark/)	
-[info] 1.3.2
-```
-
 ## Task: Implementing Accumulators V2
 
 Please see that this is implementation of Accumulators in Spark 2.x. There will be some code related to dataframes, which we have not covered yet. But worry not. Just look at the implementation of Accumulators V2 and after we cover Dataframes, it all makes sense. 
@@ -63,7 +40,7 @@ Ratings-malformed.csv - http://bit.ly/2WuTese
 **Note:** We already have cloned a github repository which contains a required file. Open `~/work/ernesto-spark/Files/chapter_6` to view file.
 
 
-**Step 2:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/countersV2.scala` to view scala file.
+**Step 2:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/countersV2.scala to view scala file.
 
 ```
 import org.apache.spark.sql.SparkSession
@@ -149,46 +126,6 @@ With this we have successfully implementd Accumulators for Spark 2.x.
 
 
 Task is complete!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

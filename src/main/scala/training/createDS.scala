@@ -1,4 +1,4 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 
@@ -8,7 +8,6 @@ object createDS {
   private case class Movies(userId: Int, movieId: Int, rating: Double, timestamp: String)
 
 
-  def main(args: Array[String]): Unit = {
 
     val spark = SparkSession
       .builder()

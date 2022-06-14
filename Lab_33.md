@@ -12,18 +12,14 @@ All packages have been installed. There is no requirement for any setup.
 
 
 
-- Click **File Browser** tab on the top left and open `~/work/ernesto-spark/Files/chapter_10` to view files.
+#### Lab Solution
+Open https://github.com/fenago/ernesto-spark-databricks/Files/chapter_10` to view files.
 
 ![](./Screenshots/files.png)
 
 The aim of the following lab exercises is to read and write various file formats in Spark applications.
 We will cover following topics in this scenario.
 - Hadoop and Sequence Files
-
-
-
-
-
 
 
 #### Install pyspark
@@ -201,41 +197,6 @@ val  hadoopRDD = hadoopData.map
 As you can see from the screenshot above, we were successfully able to read the key value pairs from the MapReduce output.
 
 Task is complete!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

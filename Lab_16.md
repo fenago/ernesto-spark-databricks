@@ -9,39 +9,16 @@
 All packages have been installed. There is no requirement for any setup.
 
 
+#### Lab Solution
+Open https://github.com/fenago/ernesto-spark-databricks/tree/master/src/main/scala/training/users.scala to view scala file.
 
 
-
-
-**Note:**
-- The supplied commands in the next steps MUST be run from your `~/work/ernesto-spark` directory. 
-- Final code was already cloned from github for this scenario. You can just understand the application code in the next steps and run it using the instructions.
-- Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/users.scala` to view scala file.
-
-![](./Screenshots/scala.png)
 
 The aim of the following lab exercises is to start writing Spark SQL code in editor to learn about Data Frames.
 We will cover following topics in this scenario.
 - Creating Data Frame using DataSource API
 
 
-
-
-
-
-#### SBT
-Verify your sbt installation version by running the following command.	
-
-`sbt sbtVersion`	
-
-You will get following output. If you get an error first time, please run the command again.
-
-```	
-[info] Loading project definition from /home/jovyan/work/ernesto-spark/project	
-[info] Loading settings for project apache-spark from build.sbt ...	
-[info] Set current project to Spark (in build file:/home/jovyan/work/ernesto-spark/)	
-[info] 1.3.2
-```
 
 ## Task: Creating Data Frame using Data Source API
 
@@ -53,7 +30,7 @@ us-500.csv - http://bit.ly/2LmgDW2
 
 **Note:** We already have cloned a github repository which contains a required file. Open `~/work/ernesto-spark/Files/chapter_7` to view file.
 
-**Step 2:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/users.scala` to view scala file.
+**Step 2:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/users.scala to view scala file.
 
 
 ```
@@ -157,41 +134,6 @@ Task is complete!
 
 
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

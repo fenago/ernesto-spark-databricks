@@ -1,10 +1,9 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 
 object sqlJoins {
 
-  def main(args: Array[String]): Unit = {
 
     val spark = SparkSession.builder()
       .appName("SQL Joins")
@@ -29,7 +28,7 @@ object sqlJoins {
 
     joinedDf.show()
 	
-	spark.stop()
+
   }
 
 }

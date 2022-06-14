@@ -1,4 +1,4 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
@@ -14,7 +14,6 @@ object decrRatingUDF {
 
   case class Ratings(userId: Int, movieID: Int, rating: Double, timeStamp: String)
 
-  def main(args: Array[String]): Unit = {
 
     val spark = SparkSession
       .builder()
@@ -45,7 +44,7 @@ object decrRatingUDF {
     val ratingDecDf = spark.sql("select *, decrUDF2(rating) as ratingDec from ratings")
     //ratingDecDf.show()
 	
-	spark.stop()
+
 
   }
 }

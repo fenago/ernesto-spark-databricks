@@ -1,11 +1,10 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 
 object dateTime {
 
-  def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
       .appName("DateTime_Functions")
       .master("local[*]")

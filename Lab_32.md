@@ -12,7 +12,8 @@ All packages have been installed. There is no requirement for any setup.
 
 
 
-- Click **File Browser** tab on the top left and open `~/work/ernesto-spark/Files/chapter_10` to view files.
+#### Lab Solution
+Open https://github.com/fenago/ernesto-spark-databricks/Files/chapter_10` to view files.
 
 ![](./Screenshots/files.png)
 
@@ -20,11 +21,6 @@ The aim of the following lab exercises is to read and write various file formats
 We will cover following topics in this scenario.
 - Parquet Files
 - ORC Files
-
-
-
-
-
 
 
 #### Install pyspark
@@ -158,56 +154,6 @@ Run above command in **terminal 2**. You can also open New terminal by Clicking 
 
 
 Task is complete!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -12,18 +12,14 @@ All packages have been installed. There is no requirement for any setup.
 
 
 
-- Click **File Browser** tab on the top left and open `~/work/ernesto-spark/Files/chapter_10` to view files.
+#### Lab Solution
+Open https://github.com/fenago/ernesto-spark-databricks/Files/chapter_10` to view files.
 
 ![](./Screenshots/files.png)
 
 The aim of the following lab exercises is to read and write various file formats in Spark applications.
 We will cover following topics in this scenario.
 - Text Files
-
-
-
-
-
 
 
 #### Install pyspark
@@ -169,76 +165,6 @@ You should see the file saved as shown below.
 ![](./Screenshots/Chapter_10/Selection_007.png)
 
 Task is complete!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

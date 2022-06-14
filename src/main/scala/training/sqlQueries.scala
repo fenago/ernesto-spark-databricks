@@ -1,10 +1,9 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 
 object sqlQueries {
 
-  def main(args: Array[String]): Unit = {
 
     val spark = SparkSession
       .builder()
@@ -36,7 +35,7 @@ object sqlQueries {
       .format("csv")
       .save("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/
 	  
-	spark.stop()
+
 
   }
 

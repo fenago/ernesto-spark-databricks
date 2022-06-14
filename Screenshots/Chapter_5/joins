@@ -1,15 +1,12 @@
-package training
 
 import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.log4j._
 
-object joins {
 
   case class ratings(userId: Int, movieID: Int, rating: Float, timestamp: String)
   case class movies(movieID: Int, movieName: String, genre:String)
   
-  def main(args: Array[String]): Unit = {
 
     Logger.getLogger("Org").setLevel(Level.ERROR)
 
@@ -28,7 +25,4 @@ object joins {
 
     joined.collect.foreach(println)
 
-  }
-
-  }
 

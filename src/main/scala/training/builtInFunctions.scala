@@ -1,4 +1,4 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 
@@ -6,7 +6,6 @@ private case class Rating(userId: Int, movieId: Int, rating: Double, timestamp: 
 
 object builtInFunctions {
 
-  def main(args: Array[String]): Unit = {
 
     val spark = SparkSession
       .builder()
@@ -50,7 +49,7 @@ object builtInFunctions {
         , count("movieId").as("movieCount"))
     byUser.show()
 	
-	spark.stop()
+
 
   }
 

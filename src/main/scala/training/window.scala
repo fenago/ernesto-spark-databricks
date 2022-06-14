@@ -1,4 +1,4 @@
-package training
+
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.expressions.Window
@@ -8,7 +8,6 @@ object window {
 
   case class Employee(name: String, number: Int, dept: String, pay: Double, manager: String)
 
-  def main(args: Array[String]): Unit = {
 
     val spark = SparkSession
       .builder()
@@ -47,7 +46,7 @@ object window {
     val lags = lag($"pay", 1, 0).over(window)
     employeeDS.select($"*", lags.as("lag")).show()
 	
-	spark.stop()
+
 
   }
 
