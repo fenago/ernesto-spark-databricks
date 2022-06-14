@@ -56,7 +56,7 @@ Creating a Dataset is similar to that of a DataFrame with some minor changes.
 
 **Step 1:** Download the ratings.csv file from the URL below. This file contains four columns: userId, movieID, rating and timestamp.
 
-ratings-head.csv - http://bit.ly/2FPdhHE
+ratings_head.csv - http://bit.ly/2FPdhHE
 
 **Note:** We already have cloned a github repository which contains a required file. Open `~/work/ernesto-spark/Files/chapter_8` to view file.
 
@@ -72,7 +72,7 @@ import org.apache.spark.sql.SparkSession
 Next, we need to write a case class so that we can specify the schema for our fields. This case class is what it makes a Dataset and differentiates from DataFrame. While loading the file, we simply refer to this case class object to create a dataset.
 
 ```
-private case class Movies(userId: Int, movieId: Int, rating: Double, timestamp: String)
+case class Movies(userId: Int, movieId: Int, rating: Double, timestamp: String)
 ```
 
 We have created a case class and named it Movies by specifying the fields and its types.
@@ -109,7 +109,7 @@ val movies = spark
   .read
   .format("csv")
   .options(Map("header" -> "true", "inferSchema" -> "true"))
-  .load("chapter_8/ratings-head.csv")
+  .load("chapter_8/ratings_head.csv")
   .as[Movies]
   .cache()
 ```

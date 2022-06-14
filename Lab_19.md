@@ -27,13 +27,13 @@ Let us now use Spark SQL to join two dataFrames.
 
 **Step 1:** Download the ratings.csv file from the URL below. This file contains four columns: userId, movieID, rating and timestamp.
 
-ratings-head.csv - http://bit.ly/2FPdhHE
+ratings_head.csv - http://bit.ly/2FPdhHE
 
 **Note:** We already have cloned a github repository which contains a required file. Open `~/work/ernesto-spark/Files/chapter_7` to view file.
 
 **Step 2:** Download the movies.csv file from the URL below. This file contains three columns: movieID, movieName and genre.
 
-movies-head.csv - http://bit.ly/2RTg72N
+movies_head.csv - http://bit.ly/2RTg72N
 
 **Note:** We already have cloned a github repository which contains a required file. Open `~/work/dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/` to view file.
 
@@ -62,12 +62,12 @@ Then write our program and create a SparkSession object as shown below.
 val movies = spark.read
   .format("csv")
   .options(Map("inferSchema" -> "true", "header" -> "true"))
-  .load("chapter_7/movies-head.csv")
+  .load("chapter_7/movies_head.csv")
 val ratings = spark.read
 
   .format("csv")
   .options(Map("inferSchema" -> "true", "header" -> "true"))
-  .load("chapter_7/ratings-head.csv")
+  .load("chapter_7/ratings_head.csv")
 ```
 
 We now have two dataFrames for each of our input file.
@@ -102,7 +102,7 @@ Task is complete!
 
 ## Operations using DataFrame API
 
-**Step 1:** The initial few steps are similar to what we have done in the previous tasks. Create a new Scala object and name it dfOps. Specify the required imports and create a SparkSession object as in the previous tasks. Finally load the us-500.csv file.
+**Step 1:** The initial few steps are similar to what we have done in the previous tasks. Create a new Scala object and name it dfOps. Specify the required imports and create a SparkSession object as in the previous tasks. Finally load the us_500.csv file.
 
 Your program at this point of time should look like the one in the screenshot below.
 

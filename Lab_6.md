@@ -17,6 +17,7 @@ All packages have been installed. There is no requirement for any setup.
 import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.log4j._
+import org.apache.spark.sql.SparkSession
 ```
 
 The first two import statements are used to import the Spark packages and last import statement is used to set logging level for our Spark application.

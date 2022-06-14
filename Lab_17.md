@@ -111,10 +111,6 @@ We now have our dataFrame recordsDf created from RDD.
 
 ```
 recordsDf.show()
-
-  }
-
-}
 ```
 
 The output is as shown in the screenshot below.
@@ -198,10 +194,6 @@ Let us use the show method to check the created dataFrame using createDataFrame 
 
 ```
 recordsDf.show()
-
-  }
-
-}
 ```
 
 **Step 7:** Let us finally run our program and check the output. The output is as shown in the screenshot below.

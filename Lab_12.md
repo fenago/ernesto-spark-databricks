@@ -41,12 +41,13 @@ Please note that this file has malformed records.
 
 ## Using Accumulator method...
 
-**Step 2:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/counters.scala to view scala file.
+**Step 2:** Click **File Browser** tab on the top left and open `~/work/ernesto-spark/src/main/scala/training/counters.scala` to view scala file.
 
 ```
 import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.log4j._
+import org.apache.spark.sql.SparkSession
 ```
 
 **Step 3:** Now write the main function along with the error log level setting as always.
@@ -83,7 +84,7 @@ In order to count and separate the good records with bad records we make use of 
 **Step 5:** The next step is to use the accumulator method in the SparkContext object and pass its arguments. The arguments are the initial value of zero (0) and the name of our accumulator as bad records.
 
 ```
-val badRecords = sc.accumulator(0, "bad records")
+var badRecords = 0
 ```
 
 You will see a warning "Symbol Accumulator is deprecated". You may ignore this warning as this is older Accumulator API for Spark 1.x.
@@ -182,10 +183,7 @@ At this point, we have successfully implemented counters based on our requiremen
 **Step 3:** Let us use the println function to print the number of bad records in our input dataset.
 
 ```
-println("The number of bad records in the input are  " + badRecords.value)
-  }
-
-}
+println("The number of bad records in the input are  " + badRecords)
 ```
 
 To retrieve the value from our accumulator which is badRecords, we use the value  method. You cannot directly retrieve the value just by using the badRecords variable when it comes to Accumulators.

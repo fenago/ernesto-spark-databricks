@@ -54,7 +54,7 @@ With Spark SQL, we can process data in two ways. The first way is to use the Spa
 You are free to use any way to process the data based on your level of comfortability. Both the APIs are optimized and are efficient. Let is first use SQL queries to process data in this task and look at few operations we can perform.
 
 
-**Step 1:** We shall be using the file `us-500.csv`, for this task as input source. Please create a new object and name it sqlQueries. Perform all the steps you performed in Task 1 and come back here. Your program should look something like the screenshot shown below.
+**Step 1:** We shall be using the file `us_500.csv`, for this task as input source. Please create a new object and name it sqlQueries. Perform all the steps you performed in Task 1 and come back here. Your program should look something like the screenshot shown below.
 
 
 
@@ -67,7 +67,7 @@ users.createOrReplaceTempView("users")
 We are using the createOrReplaceTempView method to create a temporary table named users if it doesn't exist, or replace a view if it already exist with the same name. This temporary table is available till the SparkSession is active. Once the session ends, the table will not be available anymore. Hence the name temp view. You can also persist the table using saveAsTable method.
 
 
-**Step 1:** We shall be using the file `us-500.csv`, for this task as input source. Please create a new object and name it sqlQueries. Perform all the steps you performed in Task 1 and come back here. Your program should look something like the screenshot shown below.
+**Step 1:** We shall be using the file `us_500.csv`, for this task as input source. Please create a new object and name it sqlQueries. Perform all the steps you performed in Task 1 and come back here. Your program should look something like the screenshot shown below.
 
 
 
@@ -80,7 +80,7 @@ users.createOrReplaceTempView("users")
 We are using the createOrReplaceTempView method to create a temporary table named users if it doesn't exist, or replace a view if it already exist with the same name. This temporary table is available till the SparkSession is active. Once the session ends, the table will not be available anymore. Hence the name temp view. You can also persist the table using saveAsTable method.
 
 
-**Step 1:** We shall be using the file `us-500.csv`, for this task as input source. Please create a new object and name it sqlQueries. Perform all the steps you performed in Task 1 and come back here. Your program should look something like the screenshot shown below.
+**Step 1:** We shall be using the file `us_500.csv`, for this task as input source. Please create a new object and name it sqlQueries. Perform all the steps you performed in Task 1 and come back here. Your program should look something like the screenshot shown below.
 
 
 
@@ -154,20 +154,10 @@ Let us now save the file using the code below.
 Similar to reading the file using read and load methods, we use write and save methods to save the file to file system.
 
  
-
 Now run the program as you did in the previous task and check the output directory. You should see two files: part-00000 and a _SUCCESS file. The output is saved in part-00000 file.
  
 `sqlQueries.scala` 
 
-#### Output Files
-
-`ls ~/work/dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/output` 
-
-`cat ~/dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/part-*` 
-
-Open the `part-00000-<guid>` file and you should see the result.
-
-![](./Screenshots/Chapter_7/Selection_034.png)
 
 This way you can perform any operations using the SQL data manipulation language. 
 

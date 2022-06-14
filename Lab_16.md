@@ -24,9 +24,9 @@ We will cover following topics in this scenario.
 
 Let us start this exercise by loading a file using Data Source API.
 
-**Step 1:** Download the us-500.csv file from the URL below. This file contains twelve columns: first_name, last_name, company_name, address, city, county, state, zip, phone1, phone2, email and web.
+**Step 1:** Download the us_500.csv file from the URL below. This file contains twelve columns: first_name, last_name, company_name, address, city, county, state, zip, phone1, phone2, email and web.
 
-us-500.csv - http://bit.ly/2LmgDW2
+us_500.csv - http://bit.ly/2LmgDW2
 
 **Note:** We already have cloned a github repository which contains a required file. Open `~/work/ernesto-spark/Files/chapter_7` to view file.
 
@@ -59,7 +59,7 @@ We are calling the builder method on Sparksession object to build a Spark Sessio
 val users = spark.read
   .format("csv")
   .options(Map("inferSchema" -> "true", "header" -> "true"))
-  .load("chapter_7/us-500.csv")
+  .load("chapter_7/us_500.csv")
 ```
 
 We call the read method on our SparkSession object spark, which we created in the previous step and specify the csv as format for our file using the format method. Next, we use a Map object to specify that our input file contains a header and also ask Spark SQL to infer schema. Since Map contains key value pairs, the keys are to specify properties and the values are true for both. Finally, we specify the path of our file using the load method. Please see that we use options method (plural) to specify more than one option using a Map object. If you only want to specify one option, you should use option method (singular). 
@@ -73,9 +73,6 @@ We call the read method on our SparkSession object spark, which we created in th
    users.printSchema()
 
    users.show()
- }
-
-}
 ```
 
 We call printSchema method to display the inferred schema and show method to display our dataFrame. Please note that when you use show method, only first 20 records in the dataFrame are shown. You can pass an integer for number of records in the show method. For example, to show 40 records you can use something like this users.show(40)

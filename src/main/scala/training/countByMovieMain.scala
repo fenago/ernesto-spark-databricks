@@ -2,7 +2,7 @@
 
 import org.apache.spark.sql.SparkSession
 
-private case class Movies(userId: Int, movieId: Int, rating: Double, timeStamp: String)
+case class Movies(userId: Int, movieId: Int, rating: Double, timeStamp: String)
 
 object countByMovieMain {
 

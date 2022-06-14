@@ -121,7 +121,8 @@ With this we have successfully implementd Accumulators for Spark 2.x.
 
 ![](./Screenshots/Chapter_6/Selection_022.png)
 
- To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+To run this program, run the following scala file code in the databricks notebook. The program will the then be compiled and executed.
+
 `countersV2.scala` 
 
 

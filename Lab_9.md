@@ -36,6 +36,7 @@ ratings.csv - http://bit.ly/2QmnAH9
 import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.log4j._
+import org.apache.spark.sql.SparkSession
 ```
 
 **Step 3:** Let us now write a function to parse the records and extract the fields we are interested in. For our program, we are only interested in userId and ratings fields. The function will split a line of input into a tuple of (userId, ratings).

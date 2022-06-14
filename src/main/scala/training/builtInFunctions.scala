@@ -2,7 +2,7 @@
 
 import org.apache.spark.sql.SparkSession
 
-private case class Rating(userId: Int, movieId: Int, rating: Double, timestamp: String)
+case class Rating(userId: Int, movieId: Int, rating: Double, timestamp: String)
 
 object builtInFunctions {
 
@@ -19,7 +19,7 @@ object builtInFunctions {
       .read
       .format("csv")
       .options(Map("header" -> "true", "inferSchema" -> "true"))
-      .load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings-head.csv")
+      .load("dbfs:/FileStore/shared_uploads/UPDATE_PATH_HERE/ratings_head.csv")
       .as[Rating]
       .cache()
 

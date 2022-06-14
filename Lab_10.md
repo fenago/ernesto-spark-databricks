@@ -37,6 +37,7 @@ tags.csv - http://bit.ly/2YTVGFk
 import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.log4j._
+import org.apache.spark.sql.SparkSession
 ```
 
 **Step 3:** Write the recordsParser function as in the previous task. For this task, let us extract the movieID and tag fields. The recordsParser function is as shown below.
