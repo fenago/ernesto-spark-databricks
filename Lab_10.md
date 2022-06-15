@@ -57,10 +57,9 @@ val tags = records(2).toString
 ```
 Logger.getLogger("Org").setLevel(Level.ERROR)
 val sparkSession = SparkSession.builder
-.master("local[*]")
-.appName("Paired RDD Operations")
-.getOrCreate()
-
+  .master("local[*]")
+  .appName("Paired RDD Operations")
+  .getOrCreate()
 val sc = sparkSession.sparkContext
 
 val data = sc.textFile("chapter_5/tags.csv")
