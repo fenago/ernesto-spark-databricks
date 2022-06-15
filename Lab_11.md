@@ -46,6 +46,7 @@ We shall join these datasets based on the movieID.
 ```
 import org.apache.spark._
 import org.apache.log4j._
+import org.apache.spark.sql.SparkSession
 
 object joins {
 
