@@ -239,3 +239,5 @@ val parsedData = data.map(recordParser.parse).map{
 }
 // where items from recordParser.parse method are of type Either
 
+
+https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/91671162468768/2262327549350590/2815417373163023/latest.html
