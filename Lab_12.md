@@ -222,3 +222,20 @@ We have successfully implemented Accumulators and also separated good records wi
 
 Task is complete!
 
+Notes:
+// courtesy of Keith Jackson to everyone:   
+// So, found something out about scala last night working the labs. 
+// The lambda expression with curly brackets and "case" is actually a pattern matching lambda with type unwrapping capability. 
+// It does not create an anonymous case class.
+
+val parsedData = data.map(recordParser.parse).map{
+  case Left(record) => {
+    badRecords.add(1)
+    Left(record)
+  }
+  case Right(record) => {
+    Right((record.userId, record.movieId, record.rating, record.timeStamp))
+  }
+}
+// where items from recordParser.parse method are of type Either
+
